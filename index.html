@@ -1,35 +1,32 @@
 <!DOCTYPE html>
 
-<html lang=en>
-    <meta charset="UTF-8">
-
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
         <title>JJJ</title>
-        <link rel="icon" type="png" href="/Images/Background Pattern.png">
-        
+        <!-- Fix image paths to be relative -->
+        <link rel="icon" type="image/png" href="./images/background-pattern.png">
         <link href="https://fonts.googleapis.com/css2?family=Fedora+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
        
         <style>
             body {
-                background-image: url('Images/Background pattern.png');
+                background-image: url('./images/background-pattern.png');
                 background-repeat: repeat;
                 background-position: top left;
-                background-attachment: fixed; /* optional */
+                background-attachment: fixed;
             }
 
             p {
                 background: transparent; /* let the page background show through */
             }
         </style>
-    
-    
     </head>
 
     
     <body>
         <div class="header">
-            <img src="Images/Logo.png" width="600" height="250">
+            <img src="./images/logo.png" width="600" height="250" alt="JJJ Logo">
             <p>Sup, Welcome to my personal github website created in 25/11/04 kinda like a portfilo but also an alternative 
             if i dont wanna post on <span style="background-color:red">youtube</span>
             hope your stay here tho, by the way at some point i might add ads cuz im broke so please dont use adblocker it helps me alot
@@ -54,8 +51,8 @@
         
         <div class="Games section">
             <h2>My Games</h2>
-                    <a class="game-btn" href="player.html?game=game1">Play It ant yours</a>
-                    <a class="game-btn" href="player.html?game=game2">Play Game 2</a>
+            <!-- Update game paths to match your repository structure -->
+            <a class="game-btn" href="player.html?game=it-ant-yours">Play It Ain't Yours</a>
         </div>    
         
         <div class="Videos section">
