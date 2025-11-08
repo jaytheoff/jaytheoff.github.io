@@ -1,0 +1,35 @@
+body {
+    font-family: 'Fedora One', cursive;
+    color: white
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 80px;
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+.info {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.Games.section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 14px;
+    color: hsla(0, 0%, 100%, 0.788);
+}
+
+.Videos.section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}

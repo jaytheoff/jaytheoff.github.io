@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Game Player</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="png" href="Images/Game Player Favicon.png">
+  <style>
+    html,body{height:100%;margin:0;background:#000;color:#fff;font-family:'Fedora One',cursive}
+    .toolbar{padding:8px;background:rgba(0,0,0,.6);display:flex;align-items:center;gap:12px}
+    #gameFrame{width:100%;height:calc(100% - 48px);border:0;display:block;background:#000}
+    .msg{padding:18px}
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <a href="index.html">← Back</a>
+    <span id="title">Loading…</span>
+    <p>Please play these games on fullscreen</p>
+  </div>
+
+  <iframe id="gameFrame" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" 
+          allow="fullscreen" allowfullscreen></iframe>
+
+  <div id="fallback" class="msg" style="display:none"></div>
+
+<script>
+    const params = new URLSearchParams(location.search);
+    const key = params.get('game');
+
+    // map game keys to export folder / index.html
+    const games = {
+      game1: 'games/It ant yours/HTML/HTML/index.html',
+      // add more keys as you export more games:
+      // game2: 'games/game2/index.html'
+    };
+
+    const titleEl = document.getElementById('title');
+    const frame = document.getElementById('gameFrame');
+    const fallback = document.getElementById('fallback');
+
+    if (key && games[key]) {
+      titleEl.textContent = 'Playing: ' + key;
+      frame.src = games[key];
+      frame.onload = () => titleEl.textContent = 'Playing: ' + key;
+    } else {
+      titleEl.textContent = 'No game selected';
+      fallback.style.display = 'block';
+      fallback.innerHTML = '<strong>Game not found.</strong><br>' +
+        'Available: ' + Object.keys(games).map(k=>`<a href="player.html?game=${k}">${k}</a>`).join(' • ');
+      frame.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
