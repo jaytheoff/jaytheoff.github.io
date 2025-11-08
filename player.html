@@ -28,21 +28,48 @@
     const params = new URLSearchParams(location.search);
     const key = params.get('game');
 
-    // map game keys to export folder / index.html
+    // map known game keys to a preferred path (adjust key/folder names to match your repo)
     const games = {
-      game1: 'games/It-ant-yours/HTML/HTML/index.html',
-      // add more keys as you export more games:
-      // game2: 'games/game2/index.html'
+      "it-ant-yours": "games/it-ant-yours/index.html"
     };
 
     const titleEl = document.getElementById('title');
     const frame = document.getElementById('gameFrame');
     const fallback = document.getElementById('fallback');
 
-    if (key && games[key]) {
-      titleEl.textContent = 'Playing: ' + key;
-      frame.src = games[key];
-      frame.onload = () => titleEl.textContent = 'Playing: ' + key;
+    // try common export locations and load the first that exists
+    async function findAndLoadGame(name) {
+      const candidates = [
+        games[name],                         // explicit map (may be undefined)
+        `games/${name}/index.html`,
+        `games/${name}/HTML/index.html`,
+        `games/${name}/HTML/HTML/index.html`,
+        `games/${name}.html`
+      ].filter(Boolean);
+
+      for (const url of candidates) {
+        try {
+          const res = await fetch(url, { method: "HEAD" });
+          if (res.ok) {
+            titleEl.textContent = "Playing: " + name;
+            frame.src = url;
+            frame.onload = () => titleEl.textContent = "Playing: " + name;
+            return;
+          }
+        } catch (e) {
+          // network/error — continue to next candidate
+        }
+      }
+
+      // none found
+      titleEl.textContent = "Game not found";
+      frame.style.display = "none";
+      fallback.style.display = "block";
+      fallback.innerHTML = `<strong>Game "${name}" not found.</strong><br>Paths tried:<br><code>${candidates.join("<br>")}</code>`;
+    }
+
+    if (key) {
+      findAndLoadGame(key);
     } else {
       titleEl.textContent = 'No game selected';
       fallback.style.display = 'block';
