@@ -1,6 +1,8 @@
 body {
     font-family: 'Fedora One', cursive;
-    color: white
+    color: white;
+    background-image: url("Images/Background Pattern.png");
+    margin: 0;
 }
 
 .header {
@@ -32,22 +34,4 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-}
-
-
-body, html {
-  height: 100%;
-}
-
-.background {
-  /* The image used */
-  background-image: url("Images/Background Pattern.png");
-
-  /* Full height */
-  height: 100%;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
