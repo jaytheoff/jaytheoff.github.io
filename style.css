@@ -2,6 +2,8 @@ body {
     font-family: 'Fedora One', cursive;
     color: white;
     background-image: url("Images/Background Pattern.png");
+    background-repeat: repeat;
+    background-attachment: fixed;
     margin: 0;
 }
 
