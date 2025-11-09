@@ -35,7 +35,7 @@ body {
 }
 
 .background {
-    background-image: url('Images/Background-Pattern.png');
+    background-color: red;
     position: fixed;
     top: 0;
     left: 0;
