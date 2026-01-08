@@ -1,0 +1,16 @@
+.bg {
+    background-color: #443200;
+    font-family: 'Fedora One', cursive;
+    color: white;
+}
+
+body {
+    margin: 0;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 80px;
+    margin-left: 250px;
+    margin-right: 250px;
+}
