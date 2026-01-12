@@ -1,5 +1,5 @@
 .bg {
-    background-color: #443200;
+    background-color: #6d5900;
     font-family: 'Fedora One', cursive;
     color: white;
 }
@@ -13,4 +13,35 @@ body {
     margin-bottom: 80px;
     margin-left: 250px;
     margin-right: 250px;
+}
+
+.return {
+    margin-top: auto 0;
+    margin-left: auto;
+}
+
+
+.nav-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #d91e63, #9c27b0);
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Fedora One', cursive;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.nav-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(217, 30, 99, 0.4);
+    background: linear-gradient(135deg, #ec407a, #ab47bc);
+}
+
+.nav-button:active {
+    transform: translateY(-1px);
 }

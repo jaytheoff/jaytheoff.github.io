@@ -30,13 +30,6 @@ body {
     color: hsla(0, 0%, 100%, 0.788);
 }
 
-.Videos.section {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
 .Updates.section {
     max-width: 800px;
     margin: 0 auto;
@@ -74,4 +67,10 @@ body {
 
 .nav-button:active {
     transform: translateY(-1px);
+}
+
+.video.section{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
 }
