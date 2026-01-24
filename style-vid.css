@@ -1,6 +1,15 @@
-.bg {
+@import url("https://fonts.googleapis.com/css2?family=Schoolbell&display=swap");
+
+.schoolbell-regular {
+  font-family: "Schoolbell", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
     background-color: #6d5900;
-    font-family: 'Fedora One', cursive;
+    background-image: url("Images/Grid Pattern-Yellow.png");
+    font-family: "Schoolbell", sans-serif;
     color: white;
 }
 

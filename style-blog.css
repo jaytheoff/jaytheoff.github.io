@@ -1,0 +1,19 @@
+header {
+    color: white;
+}
+
+body {
+    color: white;
+    background-color: #002f14;
+    background-image: url("Images/Grid Pattern-Green.png");
+    font-family: "Schoolbell", sans-serif;
+
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    
+    border: 8px solid #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+}
+
